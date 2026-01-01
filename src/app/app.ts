@@ -1,12 +1,15 @@
+import { Seller } from './service/seller';
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Header } from './header/header';
+import { FooterComponent } from './footer-component/footer-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header,RouterLink,FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('admin-panel');
+  
 }

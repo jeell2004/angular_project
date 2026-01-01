@@ -1,0 +1,91 @@
+/* ===== NAVBAR ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #131921;
+  padding: 12px 16px;
+  color: white;
+}
+
+.logo a {
+  color: #ff9900;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===== SEARCH ===== */
+.search-box input {
+  width: 350px;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* ===== MENU ===== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu li a:hover {
+  color: #ff9900;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ===== MOBILE VIEW ===== */
+@media (max-width: 768px) {
+  .search-box {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #131921;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu li {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #333;
+  }
+}
+.seller-name {
+  font-weight: bold;
+  color: #ff9800;
+  cursor: default;
+}
+
+.menu li a {
+  cursor: pointer;
+}

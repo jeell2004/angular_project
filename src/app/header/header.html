@@ -1,0 +1,62 @@
+<!-- <nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">MyShop</a>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search products..." />
+  </div>
+
+  <div class="hamburger" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <ul class="menu" [class.show]="menuOpen">
+    <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
+    <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
+    <li><a routerLink="/login" (click)="closeMenu()">Login</a></li>
+    <li><a routerLink="/seller" (click)="closeMenu()">Seller</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet> -->
+<nav class="navbar">
+
+  <!-- Logo -->
+  <div class="logo">
+    <a routerLink="/">MyShop</a>
+  </div>
+
+  <!-- SEARCH (ONLY FOR NORMAL USER) -->
+  <div class="search-box" *ngIf="!isSellerLoggedIn">
+    <input type="text" placeholder="Search products..." />
+  </div>
+
+  <!-- Hamburger -->
+  <div class="hamburger" (click)="toggleMenu()">☰</div>
+
+  <!-- MENU -->
+  <ul class="menu" [class.show]="menuOpen">
+
+    <!-- NORMAL USER MENU -->
+    <ng-container *ngIf="!isSellerLoggedIn">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
+      <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
+      <li><a routerLink="/login" (click)="closeMenu()">Login</a></li>
+      <li><a routerLink="/seller" (click)="closeMenu()">Seller</a></li>
+    </ng-container>
+
+    <!-- SELLER MENU -->
+    <ng-container *ngIf="isSellerLoggedIn">
+      <li class="seller-name">👤 {{ sellerName }}</li>
+      <li><a routerLink="/seller/seller-add-product" (click)="closeMenu()">➕ Add Product</a></li>
+      <li><a routerLink="sellerhome" (click)="closeMenu()">📦 Product List</a></li>
+      <li><a (click)="logout()">🚪 Logout</a></li>
+    </ng-container>
+
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

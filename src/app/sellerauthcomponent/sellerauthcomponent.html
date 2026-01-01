@@ -1,0 +1,125 @@
+<div *ngIf="!isloggedin" class="register-container">
+  <form class="register-box" #registerForm="ngForm" (ngSubmit)="registerSeller(registerForm.value)">
+    <h2>Seller Registration</h2>
+    <p>Start selling your products with us</p>
+
+    <!-- Seller Name -->
+    <div class="input-group">
+      <input type="text" placeholder="Seller / Shop Name" name="name" required ngModel />
+    </div>
+
+    <!-- Email -->
+    <div class="input-group">
+      <input type="email" placeholder="Email Address" name="email" required ngModel />
+    </div>
+
+    <!-- Phone -->
+    <div class="input-group">
+      <input type="tel" placeholder="Mobile Number" name="phone" required ngModel />
+    </div>
+
+    <!-- Business Type -->
+    <div class="input-group">
+      <select required ngModel name="businessType">
+        <option value="">Select Business Type</option>
+        <option>Individual</option>
+        <option>Proprietorship</option>
+        <option>Private Limited</option>
+        <option>Partnership</option>
+      </select>
+    </div>
+
+    <!-- GST -->
+    <div class="input-group">
+      <input type="text" placeholder="GST Number (Optional)" name="gst" ngModel />
+    </div>
+
+    <!-- Password -->
+  <div class="input-group">
+    <input
+      type="password"
+      placeholder="Create Password"
+      name="password"
+      required
+      ngModel
+      #password="ngModel"
+    />
+  </div>
+
+  <!-- Confirm Password -->
+  <div class="input-group">
+    <input
+      type="password"
+      placeholder="Confirm Password"
+      name="confirmPassword"
+      required
+      ngModel
+      #confirmPassword="ngModel"
+    />
+  </div>
+
+  <!-- ERROR MESSAGE -->
+  <p class="error"
+     *ngIf="
+       confirmPassword.touched &&
+       password.value !== confirmPassword.value
+     ">
+    ❌ Passwords do not match
+  </p>
+
+    <!-- Terms -->
+    <div class="terms">
+      <label>
+        <input type="checkbox" required ngModel name="terms" />
+        I agree to the <a href="#">Terms & Conditions</a>
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="
+      registerForm.invalid ||
+      password.value !== confirmPassword.value
+    ">Register as Seller</button>
+
+    <!-- Login Link -->
+    <div class="login-link">
+      Already a seller?
+      <a (click)="openLogin()">Login here</a>
+    </div>
+  </form>
+</div>
+
+<h2 *ngIf="isloggedin">Seller Login</h2>
+<p>{{authErr}}</p>
+<form *ngIf="isloggedin" #loginForm="ngForm" (ngSubmit)="loginSeller(loginForm.value)">
+  <input
+    type="email"
+    name="email"
+    ngModel
+    placeholder="Enter Email"
+    required
+  />
+
+  <br /><br />
+
+  <input
+    type="password"
+    name="password"
+    ngModel
+    placeholder="Enter Password"
+    required
+  />
+
+  <br /><br />
+
+  <button type="submit">Login</button>
+
+  <p *ngIf="loginError" style="color: red;">
+    Invalid Email or Password
+  </p>
+  <br><br>
+   <div class="login-link">
+      Don't have an account?
+      <a (click)="opensignup()">Login here</a>
+    </div>
+</form>

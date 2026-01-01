@@ -1,0 +1,46 @@
+<div class="product-list-container">
+  <h2 class="title">My Products</h2>
+
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of products">
+
+      <div class="image-box">
+        <img [src]="product.image" alt="{{ product.name }}">
+        <span class="status" [class.active]="product.status">
+          {{ product.status ? 'Active' : 'Inactive' }}
+        </span>
+      </div>
+
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p class="category">
+          {{ product.category }} • {{ product.subCategory }}
+        </p>
+
+        <p class="brand">Brand: {{ product.brand }}</p>
+
+        <div class="price-box">
+          <span class="price">₹{{ product.price }}</span>
+          <span class="discount" *ngIf="product.discount">
+            -{{ product.discount }}%
+          </span>
+        </div>
+
+        <p class="stock">
+          Stock: {{ product.quantity }}
+        </p>
+
+        <div class="tags">
+          <span *ngFor="let s of product.size">{{ s }}</span>
+          <span *ngFor="let c of product.color">{{ c }}</span>
+        </div>
+
+        <div class="actions">
+          <button class="edit" (click)="editProduct(product.id)">Edit</button>
+          <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

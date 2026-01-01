@@ -1,0 +1,111 @@
+<!-- 
+<div>
+    <p>{{addproductmessage}}</p>
+    <form [formGroup]="productForm" (ngSubmit)="submitProduct()" class="product-form">
+
+  <h2>Add Product</h2>
+
+  <input type="text" placeholder="Product Name" formControlName="name">
+
+  <select formControlName="category">
+    <option value="">Select Category</option>
+    <option>Shoes</option>
+    <option>Clothes</option>
+    <option>Electronics</option>
+  </select>
+
+  <input type="text" placeholder="Sub Category" formControlName="subCategory">
+
+  <input type="text" placeholder="Price" formControlName="price">
+
+  <input type="text" placeholder="Discount %" formControlName="discount">
+
+  <input type="text" placeholder="Quantity" formControlName="quantity">
+
+  <input type="text" placeholder="Brand" formControlName="brand">
+
+  <div class="checkbox-group">
+    <label *ngFor="let s of sizes">
+      <input type="checkbox" (change)="toggleArrayValue('size', s)"> {{ s }}
+    </label>
+  </div>
+
+  <div class="checkbox-group">
+    <label *ngFor="let c of colors">
+      <input type="checkbox" (change)="toggleArrayValue('color', c)"> {{ c }}
+    </label>
+  </div>
+
+  <textarea placeholder="Description" formControlName="description"></textarea>
+
+  <input type="text" placeholder="Image URL" formControlName="image">
+
+  <label>
+    <input type="checkbox" formControlName="status"> Active
+  </label>
+
+  <button type="submit" [disabled]="productForm.invalid">
+    Add Product
+  </button>
+
+</form>
+
+</div> -->
+<div>
+  <p *ngIf="addproductmessage">{{ addproductmessage }}</p>
+
+  <form
+    [formGroup]="productForm"
+    (ngSubmit)="submitProduct(productForm.value)"
+    class="product-form"
+  >
+
+    <h2>Add Product</h2>
+
+    <input type="text" placeholder="Product Name" formControlName="name">
+
+    <select formControlName="category">
+      <option value="">Select Category</option>
+      <option>Shoes</option>
+      <option>Clothes</option>
+      <option>Electronics</option>
+    </select>
+
+    <input type="text" placeholder="Sub Category" formControlName="subCategory">
+
+    <input type="number" placeholder="Price" formControlName="price">
+
+    <input type="number" placeholder="Discount %" formControlName="discount">
+
+    <input type="number" placeholder="Quantity" formControlName="quantity">
+
+    <input type="text" placeholder="Brand" formControlName="brand">
+
+    <!-- SIZE -->
+    <div class="checkbox-group">
+      <label *ngFor="let s of sizes">
+        <input type="checkbox" (change)="toggleArrayValue('size', s)"> {{ s }}
+      </label>
+    </div>
+
+    <!-- COLOR -->
+    <div class="checkbox-group">
+      <label *ngFor="let c of colors">
+        <input type="checkbox" (change)="toggleArrayValue('color', c)"> {{ c }}
+      </label>
+    </div>
+
+    <textarea placeholder="Description" formControlName="description"></textarea>
+
+    <input type="text" placeholder="Image URL" formControlName="image">
+
+    <label>
+      <input type="checkbox" formControlName="status"> Active
+    </label>
+
+    <button type="submit" [disabled]="productForm.invalid">
+      Add Product
+    </button>
+
+  </form>
+</div>

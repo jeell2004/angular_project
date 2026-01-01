@@ -1,0 +1,71 @@
+{
+  "seller": [
+    {
+      "id": "b61b",
+      "name": "ABC Traders",
+      "email": "seller@abctraders.com",
+      "phone": "9876543210",
+      "businessType": "Proprietorship",
+      "gst": "24ABCDE1234F1Z5",
+      "password": "Seller@123",
+      "confirmPassword": "Seller@123",
+      "terms": true
+    },
+    {
+      "id": "fa4b",
+      "name": "jeel limbani",
+      "email": "jeellimbani2004@gmail.com",
+      "phone": "9099157483",
+      "businessType": "Proprietorship",
+      "gst": "12345678909",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "terms": true
+    },
+    {
+      "id": "5819",
+      "name": "jeel ak",
+      "email": "jeel81132@gmail.com",
+      "phone": "07896548885",
+      "businessType": "Proprietorship",
+      "gst": "12345678909",
+      "password": "12121212",
+      "confirmPassword": "12121212",
+      "terms": true
+    },
+    {
+      "id": "da8e",
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "1234567889",
+      "businessType": "Individual",
+      "gst": "124578963",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "terms": true
+    },
+    {
+      "id": "174e",
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "1234567889",
+      "businessType": "Proprietorship",
+      "gst": "12345678909",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "terms": true
+    },
+    {
+      "id": "7add",
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "1234567889",
+      "businessType": "Private Limited",
+      "gst": "12345678909",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "terms": true
+    }
+  ],
+  "Products": []
+}
