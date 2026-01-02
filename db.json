@@ -65,7 +65,69 @@
       "password": "123123123",
       "confirmPassword": "123123123",
       "terms": true
+    },
+    {
+      "id": "1dd2",
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "1234567889",
+      "businessType": "Private Limited",
+      "gst": "12345678909",
+      "password": "123",
+      "confirmPassword": "123",
+      "terms": true
     }
   ],
-  "Products": []
+  "Products": [
+    {
+      "id": "79c0",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-air",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    },
+    {
+      "id": "2b9c",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-airrrr",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    }
+  ]
 }

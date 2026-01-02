@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../interface/productdata';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +26,15 @@ export class Productdata {
   selectedProduct(id: string) {
     return this.http.get<Product>(`http://localhost:3000/Products/${id}`);
   }
-  updateProduct(id: string, data: Product) {
-    return this.http.put(`http://localhost:3000/Products/${id}`, data);
+  updateProduct(data: Product): Observable<Product> {
+    return this.http.put<Product>(`http://localhost:3000/Products/${data.id}`, data);
   }
+
+  // updateProduct( data: Product) {
+
+  //   console.log(data.id);
+  //   console.log(data);
+    
+  //   return this.http.put<Product>(`http://localhost:3000/Products/${data.id}`, data);
+  // }
 }

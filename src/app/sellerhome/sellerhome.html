@@ -2,17 +2,23 @@
   <h2 class="title">My Products</h2>
 
   <div class="product-grid">
-    <div class="product-card" *ngFor="let product of products">
-
+    <div
+      class="product-card"
+      *ngFor="let product of products"
+      (click)="openProductDialog(product)"
+    >
+      <!-- IMAGE -->
       <div class="image-box">
-        <img [src]="product.image" alt="{{ product.name }}">
+        <img [src]="product.image" alt="{{ product.name }}" />
         <span class="status" [class.active]="product.status">
           {{ product.status ? 'Active' : 'Inactive' }}
         </span>
       </div>
 
+      <!-- DETAILS -->
       <div class="product-details">
         <h3>{{ product.name }}</h3>
+
         <p class="category">
           {{ product.category }} • {{ product.subCategory }}
         </p>
@@ -26,21 +32,78 @@
           </span>
         </div>
 
-        <p class="stock">
-          Stock: {{ product.quantity }}
-        </p>
+        <p class="stock">Stock: {{ product.quantity }}</p>
 
         <div class="tags">
           <span *ngFor="let s of product.size">{{ s }}</span>
           <span *ngFor="let c of product.color">{{ c }}</span>
         </div>
 
+        <!-- ACTIONS -->
         <div class="actions">
-          <button class="edit" (click)="editProduct(product.id)">Edit</button>
-          <button class="delete" (click)="deleteProduct(product.id)">Delete</button>
+          <button
+            class="edit"
+            routerLink="seller-update-product/{{ product.id }}"
+            (click)="$event.stopPropagation()"
+          >
+            Edit
+          </button>
+
+          <button
+            class="delete"
+            (click)="deleteProduct(product.id); $event.stopPropagation()"
+          >
+            Delete
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
+<!-- =================== PRODUCT VIEW DIALOG =================== -->
+
+<div class="modal-backdrop" *ngIf="showDialog">
+  <div class="modal">
+    <button class="close-btn" (click)="closeDialog()">✕</button>
+
+    <div *ngIf="selectedProduct" class="modal-content">
+      <img
+        [src]="selectedProduct.image"
+        alt="{{ selectedProduct.name }}"
+        class="modal-image"
+      />
+
+      <h2>{{ selectedProduct.name }}</h2>
+
+      <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+      <p><strong>Sub Category:</strong> {{ selectedProduct.subCategory }}</p>
+      <p><strong>Brand:</strong> {{ selectedProduct.brand }}</p>
+      <p><strong>Price:</strong> ₹{{ selectedProduct.price }}</p>
+
+      <p *ngIf="selectedProduct.discount">
+        <strong>Discount:</strong> {{ selectedProduct.discount }}%
+      </p>
+
+      <p><strong>Stock:</strong> {{ selectedProduct.quantity }}</p>
+
+      <p>
+        <strong>Sizes:</strong>
+        <span *ngFor="let s of selectedProduct.size">{{ s }}</span>
+      </p>
+
+      <p>
+        <strong>Colors:</strong>
+        <span *ngFor="let c of selectedProduct.color">{{ c }}</span>
+      </p>
+
+      <p><strong>Description:</strong></p>
+      <p class="desc">{{ selectedProduct.description }}</p>
+
+      <p>
+        <strong>Status:</strong>
+        {{ selectedProduct.status ? 'Active' : 'Inactive' }}
+      </p>
     </div>
   </div>
 </div>
