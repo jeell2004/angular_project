@@ -30,11 +30,18 @@ export class Productdata {
     return this.http.put<Product>(`http://localhost:3000/Products/${data.id}`, data);
   }
 
-  // updateProduct( data: Product) {
-
-  //   console.log(data.id);
-  //   console.log(data);
+  popularProduct() {
+    return this.http.get<Product[]>('http://localhost:3000/Products?_sort=sold&_order=desc&_limit=3');
+  }
+  treandyProduct() {
+    return this.http.get<Product[]>('http://localhost:3000/Products?_sort=createdAt&_order=desc&_limit=8');
+  }
+  searchProducts(keyword: string) {
+    console.log(keyword);
     
-  //   return this.http.put<Product>(`http://localhost:3000/Products/${data.id}`, data);
-  // }
+    return this.http.get<Product[]>(
+      `http://localhost:3000/Products?query=${keyword}`
+    );
+  }
+
 }

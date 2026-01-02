@@ -1,1 +1,47 @@
-<p>homecomponent works!</p>
+@if (popularProduct?.length) {
+  <ngb-carousel
+    [interval]="4000"
+    [pauseOnHover]="true"
+    [showNavigationArrows]="true"
+    [showNavigationIndicators]="true"
+    class="hero-carousel"
+  >
+    <ng-template ngbSlide *ngFor="let product of popularProduct">
+      <section class="hero-section">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-split">
+          <!-- LEFT CONTENT -->
+          <div class="hero-text">
+            <span class="badge">Popular Product</span>
+
+            <h1>{{ product.name }}</h1>
+
+            <p class="subtitle">
+              {{ product.category }} • {{ product.subCategory }}
+            </p>
+
+            <div class="price">
+              ₹{{ product.price }}
+              <span *ngIf="product.discount" class="discount">
+                -{{ product.discount }}%
+              </span>
+            </div>
+
+            <button class="shop-btn">Shop Now</button>
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div class="hero-image-box">
+            <img
+              [src]="product.image"
+              alt="{{ product.name }}"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </section>
+    </ng-template>
+  </ngb-carousel>
+}
+<app-product-list></app-product-list>

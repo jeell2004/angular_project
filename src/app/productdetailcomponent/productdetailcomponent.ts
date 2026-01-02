@@ -5,12 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Productdata } from '../service/productdata';
 import { NgFor, NgIf } from '@angular/common';
 @Component({
-  selector: 'app-products-component',
+  selector: 'app-productdetailcomponent',
   imports: [NgIf, NgFor],
-  templateUrl: './products-component.html',
-  styleUrl: './products-component.css',
+  templateUrl: './productdetailcomponent.html',
+  styleUrl: './productdetailcomponent.css',
 })
-export class ProductsComponent {
+export class Productdetailcomponent {
 product?: Product;
   isLoading = true;
 
@@ -29,4 +29,5 @@ product?: Product;
       });
     }
   }
+
 }

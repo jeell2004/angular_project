@@ -1,0 +1,63 @@
+<div class="product-list-container">
+
+  <h2 class="title">Latest Products</h2>
+
+  <!-- LOADING -->
+  <div *ngIf="isLoading" class="loading">
+    Loading products...
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="product-grid" *ngIf="!isLoading">
+
+    <div
+      class="product-card"
+      *ngFor="let product of products"
+    >
+
+      <!-- IMAGE -->
+      <a [routerLink]="['/product', product.id]" class="image-box">
+        <img [src]="product.image" alt="{{ product.name }}" />
+      </a>
+
+      <!-- WISHLIST -->
+      <button
+        class="wishlist-btn"
+        (click)="toggleWishlist(product); $event.stopPropagation()"
+      >
+        ❤
+      </button>
+
+      <!-- DETAILS -->
+      <div class="product-details">
+
+        <h3 class="name">
+          <a [routerLink]="['/product', product.id]">
+            {{ product.name }}
+          </a>
+        </h3>
+
+        <p class="category">{{ product.category }}</p>
+
+        <div class="price-box">
+          <span class="price">₹{{ product.price }}</span>
+
+          <span class="discount" *ngIf="product.discount">
+            {{ product.discount }}% OFF
+          </span>
+        </div>
+
+        <!-- ACTIONS -->
+        <button
+          class="add-cart"
+          (click)="addToCart(product); $event.stopPropagation()"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

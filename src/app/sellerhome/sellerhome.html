@@ -61,10 +61,10 @@
   </div>
 </div>
 
-<!-- =================== PRODUCT VIEW DIALOG =================== -->
+<!-- ================= PRODUCT VIEW DIALOG ================= -->
 
-<div class="modal-backdrop" *ngIf="showDialog">
-  <div class="modal">
+<div class="custom-backdrop" *ngIf="showDialog">
+  <div class="custom-modal">
     <button class="close-btn" (click)="closeDialog()">✕</button>
 
     <div *ngIf="selectedProduct" class="modal-content">

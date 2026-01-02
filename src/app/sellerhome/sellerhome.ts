@@ -22,20 +22,28 @@ export class Sellerhome {
    showDialog = false;
 selectedProduct?: Product;
   openProductDialog(product: Product) {
-    this.selectedProduct = product;
-    this.showDialog = true;
-  }
+  this.selectedProduct = product;
+  this.showDialog = true;
+}
 
-  closeDialog() {
-    this.showDialog = false;
-    this.selectedProduct = undefined;
-  }
- deleteProduct(id: string) {
+closeDialog() {
+  this.showDialog = false;
+  this.selectedProduct = undefined;
+}
+deleteProduct(id?: string) {
+  if (!id) return;
+
   this.product.deleteProduct(id).subscribe((result) => {
     console.log('Deleted:', result);
     this.ngOnInit(); // refresh list
   });
 }
+//  deleteProduct(id: string) {
+//   this.product.deleteProduct(id).subscribe((result) => {
+//     console.log('Deleted:', result);
+//     this.ngOnInit(); // refresh list
+//   });
+// }
 
   editProduct(id: string) {
     console.log(id);

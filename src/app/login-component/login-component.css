@@ -20,7 +20,7 @@
 }
 
 .login-box h2 {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #131921;
 }
 
@@ -79,11 +79,16 @@ button {
   color: #131921;
 }
 
-button:hover {
+button:disabled {
+  background: #ffd699;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
   background: #ffa726;
 }
 
-/* ===== SIGNUP ===== */
+/* ===== SIGNUP TOGGLE ===== */
 .signup {
   margin-top: 20px;
   font-size: 14px;
@@ -93,6 +98,7 @@ button:hover {
   color: #ff9900;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* ===== MOBILE ===== */

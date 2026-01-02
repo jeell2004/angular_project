@@ -1,221 +1,110 @@
-// import { NgIf } from '@angular/common';
-// import { Component } from '@angular/core';
-// import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
-// import { Seller } from '../service/seller';
-
-// @Component({
-//   selector: 'app-header',
-//   imports: [RouterLink, RouterOutlet,NgIf],
-//   templateUrl: './header.html',
-//   styleUrl: './header.css',
-// })
-// export class Header {
-//   menustyle : string = 'default'
-//     isSellerLoggedIn = false;
-
-//     sellerName = '';
-
-//   constructor(private router: Router, private seller: Seller) {}
-//   menuOpen = false;
-
-//   // ngOnInit(): void {
-
-//   //   // 🔁 Listen to router changes
-//   //   this.router.events.subscribe((event: any) => {
-//   //     if (event instanceof NavigationEnd) {
-
-//   //       // 🔐 Check seller login
-//   //       const sellerData = localStorage.getItem('seller');
-//   //       this.isSellerLoggedIn = !!sellerData;
-
-//   //       // 👤 Retrieve seller name safely
-//   //       if (sellerData) {
-//   //         try {
-//   //           const sellerObj = JSON.parse(sellerData);
-//   //           this.sellerName = sellerObj?.name || '';
-//   //           console.log(this.sellerName);
-            
-//   //         } catch (error) {
-//   //           console.error('Invalid seller data in localStorage');
-//   //           this.sellerName = '';
-//   //         }
-//   //       } else {
-//   //         this.sellerName = '';
-//   //       }
-
-//   //       // 🎨 Navbar style logic
-//   //       if (this.isSellerLoggedIn && event.url.includes('seller')) {
-//   //         this.menustyle = 'seller';
-//   //       } else {
-//   //         this.menustyle = 'default';
-//   //       }
-
-//   //       console.log('URL:', event.url);
-//   //       console.log('Seller Logged In:', this.isSellerLoggedIn);
-//   //       console.log('Seller Name:', this.sellerName);
-//   //     }
-//   //   });
-//   // }
-// ngOnInit(): void {
-//     this.router.events.subscribe(event => {
-
-//       if (event instanceof NavigationEnd) {
-
-//         // 🔐 Check seller login from localStorage
-//         const sellerData = localStorage.getItem('seller');
-//         this.isSellerLoggedIn = !!sellerData;
-
-//         // 👤 Get seller name safely
-//         if (sellerData) {
-//           try {
-//             const sellerObj = JSON.parse(sellerData);
-//             this.sellerName = sellerObj?.name || '';
-//           } catch {
-//             console.error('Invalid seller data in localStorage');
-//             this.sellerName = '';
-//           }
-//         } else {
-//           this.sellerName = '';
-//         }
-
-//         // 🎨 Navbar style
-//         if (this.isSellerLoggedIn && event.url.includes('seller')) {
-//           this.menustyle = 'seller';
-//         } else {
-//           this.menustyle = 'default';
-//         }
-
-//         console.log('URL:', event.url);
-//         console.log('Seller Logged In:', this.isSellerLoggedIn);
-//         console.log('Seller Name:', this.sellerName);
-//       }
-//     });
-//   }
-
-//   toggleMenu(): void {
-//     this.menuOpen = !this.menuOpen;
-//   }
-
-//   closeMenu(): void {
-//     this.menuOpen = false;
-//   }
-
-//   logout(): void {
-//     localStorage.removeItem('seller');
-//     this.seller.issellerloggedin.next(false);
-//     this.isSellerLoggedIn = false;
-//     this.sellerName = '';
-//     this.router.navigate(['/']);
-//   }
-
-// // ngOnInit(): void {
-// //   this.router.events.subscribe((event: any) => {
-
-// //     if (event instanceof NavigationEnd) {
-
-// //       // Check seller login
-// //       this.isSellerLoggedIn = !!localStorage.getItem('seller');
-
-// //       // Seller navbar style
-// //       if (this.isSellerLoggedIn && event.url.includes('seller')) {
-// //         this.menustyle = 'seller';
-// //       } else {
-// //         this.menustyle = 'default';
-// //       }
-
-// //       console.log('Current URL:', event.url);
-// //       console.log('Menu Style:', this.menustyle);
-// //     }
-// //   });
-// // }
-
-
-
-// //   // ngOnInit() {
-// //   //   this.router.events.subscribe((data: any) => {   
-
-// //   //     if (data.url) {
-// //   //       console.log(data.url);
-        
-// //   //       if (localStorage.getItem('seller')&& data.url.includes('seller')) {
-// //   //         this.menustyle = 'seller';
-// //   //       } else {
-// //   //         this.menustyle = 'default';
-// //   //       }
-// //   //     }
-// //   //   });
-// //   // }
-// //   toggleMenu() {
-// //     this.menuOpen = !this.menuOpen;
-// //   }
-// // logout() {
-// //     localStorage.removeItem('seller');
-// //     this.seller.issellerloggedin.next(false);
-// //     this.router.navigate(['/']);
-// //   }
-
-// //   closeMenu() {
-// //     this.menuOpen = false;
-// //   }
-// }
-import { NgIf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Seller } from '../service/seller';
+import { Productdata } from '../service/productdata';
+import { Product } from '../interface/productdata';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, NgIf],
+  imports: [RouterLink, RouterOutlet, NgIf,FormsModule,
+  NgForOf,
+],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header implements OnInit {
-
   menustyle: string = 'default';
   isSellerLoggedIn: boolean = false;
   sellerName: string = '';
   menuOpen: boolean = false;
+searchTerm = '';
+  allProducts: Product[] = [];
+  filteredProducts: Product[] = [];
+isUserLoggedIn: boolean = false;
+userName: string = '';
 
-  constructor(
-    private router: Router,
-    private seller: Seller
-  ) {}
+  constructor(private router: Router, private seller: Seller, private product: Productdata) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe(event => {
+    //  this.product.productlist().subscribe(data => {
+    //   this.allProducts = data;
+    // });
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     // 🔐 Check seller login from localStorage
+    //     const sellerData = localStorage.getItem('seller');
+    //     this.isSellerLoggedIn = !!sellerData;
 
-      if (event instanceof NavigationEnd) {
+    //     // 👤 Get seller name safely
+    //     if (sellerData) {
+    //       try {
+    //         const sellerObj = JSON.parse(sellerData);
+    //         this.sellerName = sellerObj?.name || '';
+    //       } catch {
+    //         console.error('Invalid seller data in localStorage');
+    //         this.sellerName = '';
+    //       }
+    //     } else {
+    //       this.sellerName = '';
+    //     }
 
-        // 🔐 Check seller login from localStorage
-        const sellerData = localStorage.getItem('seller');
-        this.isSellerLoggedIn = !!sellerData;
+    //     // 🎨 Navbar style
+    //     if (this.isSellerLoggedIn && event.url.includes('seller')) {
+    //       this.menustyle = 'seller';
+    //     } else {
+    //       this.menustyle = 'default';
+    //     }
 
-        // 👤 Get seller name safely
-        if (sellerData) {
-          try {
-            const sellerObj = JSON.parse(sellerData);
-            this.sellerName = sellerObj?.name || '';
-          } catch {
-            console.error('Invalid seller data in localStorage');
-            this.sellerName = '';
-          }
-        } else {
-          this.sellerName = '';
-        }
+    //     console.log('URL:', event.url);
+    //     console.log('Seller Logged In:', this.isSellerLoggedIn);
+    //     console.log('Seller Name:', this.sellerName);
+    //   }
+    // });
+    this.router.events.subscribe((event) => {
+  if (event instanceof NavigationEnd) {
 
-        // 🎨 Navbar style
-        if (this.isSellerLoggedIn && event.url.includes('seller')) {
-          this.menustyle = 'seller';
-        } else {
-          this.menustyle = 'default';
-        }
+    /* ---------- SELLER AUTH ---------- */
+    const sellerData = localStorage.getItem('seller');
+    this.isSellerLoggedIn = !!sellerData;
 
-        console.log('URL:', event.url);
-        console.log('Seller Logged In:', this.isSellerLoggedIn);
-        console.log('Seller Name:', this.sellerName);
+    if (sellerData) {
+      try {
+        const sellerObj = JSON.parse(sellerData);
+        this.sellerName = sellerObj?.name || '';
+      } catch {
+        this.sellerName = '';
       }
-    });
+    } else {
+      this.sellerName = '';
+    }
+
+    /* ---------- USER AUTH ---------- */
+    const userData = localStorage.getItem('user');
+    this.isUserLoggedIn = !!userData;
+
+    if (userData) {
+      try {
+        const userObj = JSON.parse(userData);
+        this.userName = userObj?.name || '';
+      } catch {
+        this.userName = '';
+      }
+    } else {
+      this.userName = '';
+    }
+
+    /* ---------- MENU STYLE ---------- */
+    if (this.isSellerLoggedIn && event.url.includes('seller')) {
+      this.menustyle = 'seller';
+    } else {
+      this.menustyle = 'default';
+    }
+  }
+});
+
   }
 
   toggleMenu(): void {
@@ -225,12 +114,62 @@ export class Header implements OnInit {
   closeMenu(): void {
     this.menuOpen = false;
   }
+logout(): void {
+  localStorage.removeItem('seller');
+  localStorage.removeItem('user');
 
-  logout(): void {
-    localStorage.removeItem('seller');
-    this.seller.issellerloggedin.next(false);
-    this.isSellerLoggedIn = false;
-    this.sellerName = '';
-    this.router.navigate(['/']);
+  this.isSellerLoggedIn = false;
+  this.isUserLoggedIn = false;
+
+  this.sellerName = '';
+  this.userName = '';
+
+  this.menuOpen = false;
+  this.router.navigate(['/']);
+}
+  // logout(): void {
+  //   localStorage.removeItem('seller');
+  //   this.seller.issellerloggedin.next(false);
+  //   this.isSellerLoggedIn = false;
+  //   this.sellerName = '';
+  //   this.router.navigate(['/']);
+  // }
+  onSearchChange() {
+  const term = this.searchTerm.trim().toLowerCase();
+
+  if (!term) {
+    this.filteredProducts = [];
+    return;
+  }
+
+  // live suggestions (max 5)
+  this.filteredProducts = this.allProducts
+    .filter(product =>
+      product.name.toLowerCase().includes(term)
+    )
+    .slice(0, 5);
+}
+
+onSearchEnter() {
+  const term = this.searchTerm.trim();
+
+  if (!term) return;
+
+  // clear suggestion dropdown
+  this.filteredProducts = [];
+
+  // navigate to search page
+  this.router.navigate(['/search'], {
+    queryParams: { q: term }
+  });
+
+  // optional: clear input
+  this.searchTerm = '';
+}
+
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.filteredProducts = [];
   }
 }

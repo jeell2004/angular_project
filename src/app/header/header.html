@@ -1,46 +1,43 @@
-<!-- <nav class="navbar">
-  <div class="logo">
-    <a routerLink="/">MyShop</a>
-  </div>
-
-  <div class="search-box">
-    <input type="text" placeholder="Search products..." />
-  </div>
-
-  <div class="hamburger" (click)="toggleMenu()">
-    ☰
-  </div>
-
-  <ul class="menu" [class.show]="menuOpen">
-    <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-    <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
-    <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
-    <li><a routerLink="/login" (click)="closeMenu()">Login</a></li>
-    <li><a routerLink="/seller" (click)="closeMenu()">Seller</a></li>
-  </ul>
-</nav>
-
-<router-outlet></router-outlet> -->
 <nav class="navbar">
 
-  <!-- Logo -->
+  <!-- LOGO -->
   <div class="logo">
     <a routerLink="/">MyShop</a>
   </div>
 
-  <!-- SEARCH (ONLY FOR NORMAL USER) -->
+  <!-- SEARCH (ONLY USER & GUEST) -->
   <div class="search-box" *ngIf="!isSellerLoggedIn">
-    <input type="text" placeholder="Search products..." />
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange()"
+      (keyup.enter)="onSearchEnter()"
+      placeholder="Search products..."
+    />
+
+    <ul class="suggestions" *ngIf="filteredProducts.length">
+      <li
+        *ngFor="let product of filteredProducts"
+        [routerLink]="['/product', product.id]"
+        (click)="onSearchEnter()"
+      >
+        <img [src]="product.image" />
+        <div>
+          <p class="name">{{ product.name }}</p>
+          <p class="price">₹{{ product.price }}</p>
+        </div>
+      </li>
+    </ul>
   </div>
 
-  <!-- Hamburger -->
+  <!-- HAMBURGER -->
   <div class="hamburger" (click)="toggleMenu()">☰</div>
 
   <!-- MENU -->
   <ul class="menu" [class.show]="menuOpen">
 
-    <!-- NORMAL USER MENU -->
-    <ng-container *ngIf="!isSellerLoggedIn">
+    <!-- 🔓 GUEST -->
+    <ng-container *ngIf="!isUserLoggedIn && !isSellerLoggedIn">
       <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
       <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
       <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
@@ -48,11 +45,19 @@
       <li><a routerLink="/seller" (click)="closeMenu()">Seller</a></li>
     </ng-container>
 
-    <!-- SELLER MENU -->
+    <!-- 👤 USER LOGGED IN -->
+    <ng-container *ngIf="isUserLoggedIn && !isSellerLoggedIn">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
+      <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
+      <li><a (click)="logout()">🚪 Logout</a></li>
+    </ng-container>
+
+    <!-- 🧑‍💼 SELLER LOGGED IN -->
     <ng-container *ngIf="isSellerLoggedIn">
       <li class="seller-name">👤 {{ sellerName }}</li>
       <li><a routerLink="/seller/seller-add-product" (click)="closeMenu()">➕ Add Product</a></li>
-      <li><a routerLink="sellerhome" (click)="closeMenu()">📦 Product List</a></li>
+      <li><a routerLink="/sellerhome" (click)="closeMenu()">📦 Product List</a></li>
       <li><a (click)="logout()">🚪 Logout</a></li>
     </ng-container>
 

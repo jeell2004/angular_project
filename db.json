@@ -105,10 +105,66 @@
       "status": true
     },
     {
-      "id": "2b9c",
+      "id": "773d",
+      "name": "Sony BRAVIA 2 4K Ultra HD Smart Google LED TV",
+      "category": "Electronics",
+      "subCategory": "tv",
+      "price": 42000,
+      "discount": 10,
+      "quantity": 5,
+      "brand": "Sony",
+      "size": [],
+      "color": [],
+      "description": "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 Hertz\nConnectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices\nSound : 20 Watts Output | 2ch | Open Baffle Speaker| DTS Digital Surround | DTS:X | Dolby Atmos, Dolby Audio\nSmart TV Features: Google TV | Watchlist | Google Assistant |Google Cast | Game Menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay 2 | Apple Homekit | Alexa | Energy Rating: 2 Star | Annual Energy Consumption: 134.38 kWh\nDisplay : 4K LED | 4K Processor X1 | Live Color | 4K X-Reality PRO | MotionFlow XR 200 | HDR10/HLG\nWarranty Information: 1 Year comprehensive warranty on product provided by the brand from the date of purchase including remote for technical issue\nAdditional Information : Brand Warranty can be availed using invoice. User manual can be accessed from brand website under About this item/ Product details section.",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSRjse2asgTnZR5sK2nLMxBZv9guk1oQ4ceOfXcnDZeX22rUg9vK9KC4I2X5y0qRzzw4X_D8JdwADnaSE1r4Po7Gx_2HtZHVLh5CBCnkHhqsOnrHGEQ1HvoRw",
+      "status": true
+    },
+    {
+      "id": "892a",
+      "name": "H&M Men's Regular Fit T-shirt",
+      "category": "Clothes",
+      "subCategory": "T-shirt",
+      "price": 400,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "H&M",
+      "size": [
+        "XXL",
+        "XL",
+        "L",
+        "M"
+      ],
+      "color": [
+        "Blue",
+        "Black",
+        "White",
+        "Green",
+        "Red"
+      ],
+      "description": "H&M Men's Regular Fit T-shirt",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-Clw15A8w7zbkqj3IgmamkXKAp-mqk5eE2GhT_noTFlwxFnLj20PNRqv1odNMaDTueO-lIETogDzR_n0Gn2jLQKa3Kisndfxp_Lpa1QTZoFKF7sv7W2nCfg",
+      "status": true
+    },
+    {
+      "id": "90ba",
+      "name": "Lymio Men Polyester Casual Regular Fit Shirt",
+      "category": "Clothes",
+      "subCategory": "Shirt",
+      "price": 500,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Lymio",
+      "size": [],
+      "color": [],
+      "description": "Lymio Men Polyester Casual Regular Fit Shirt",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRebTChZyMfmjyP9imbxFQqINLYzSWG4xMNhes2KBGYiyDmWvAfGWZQIDqFQ3tQaagkVdPqLZFThL8U6_GG7U8cGBFamN3rD4e4d0dzTg7FeTivLZ7laBFy",
+      "status": true
+    },
+    {
+      "id": "79c1",
       "name": "nike",
       "category": "Shoes",
-      "subCategory": "nike-airrrr",
+      "subCategory": "nike-air",
       "price": 10000,
       "discount": 10,
       "quantity": 10,
@@ -128,6 +184,132 @@
       "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
       "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
       "status": true
+    },
+    {
+      "id": "79c2",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-air",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    },
+    {
+      "id": "79c3",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-air",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    },
+    {
+      "id": "79c4",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-air",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    },
+    {
+      "id": "79c5",
+      "name": "nike",
+      "category": "Shoes",
+      "subCategory": "nike-air",
+      "price": 10000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Nike",
+      "size": [
+        "S",
+        "L",
+        "M",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "Red",
+        "Black",
+        "White"
+      ],
+      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "status": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "YKx9O@example.com",
+      "password": "12345678"
+    },
+    {
+      "id": "5ce0",
+      "name": "jeel ak",
+      "email": "jeel81132@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "6065",
+      "name": "jeel ak",
+      "email": "jeel81132@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "5b5d",
+      "name": "jeel",
+      "email": "jeellimbani1811@gmail.com",
+      "password": "123123123"
     }
   ]
 }
