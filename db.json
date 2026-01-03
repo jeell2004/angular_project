@@ -321,6 +321,12 @@
       "name": "jeel",
       "email": "jeellimbani1811@gmail.com",
       "password": "123123123"
+    },
+    {
+      "id": "5784",
+      "name": "jeel limbani",
+      "email": "jeellimbani2004@gmail.com",
+      "password": "12345678"
     }
   ],
   "cart": [
@@ -366,6 +372,31 @@
       ],
       "total": 500,
       "date": "2026-01-03T06:28:16.760Z"
+    },
+    {
+      "id": "b785",
+      "customer": {
+        "name": "jeel limbani",
+        "email": "jeellimbani2004@gmail.com",
+        "address": "white palace, mota varachha",
+        "city": "surat",
+        "state": "Gujarat",
+        "zip": "394101",
+        "payment": "upi"
+      },
+      "items": [
+        {
+          "id": "c45b",
+          "productId": "79c3",
+          "name": "nike",
+          "price": 10000,
+          "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+          "qty": 1
+        }
+      ],
+      "total": 10000,
+      "date": "2026-01-03T10:06:29.219Z",
+      "status": "placed"
     }
   ]
 }

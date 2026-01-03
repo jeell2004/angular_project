@@ -1,32 +1,44 @@
 .footer {
-  background: #131921;
-  color: #ddd;
-  padding: 40px 20px 0;
-  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  color: #e5e7eb;
+  margin-top: 60px;
+  font-family: "Segoe UI", sans-serif;
 }
 
+/* Container */
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
   max-width: 1200px;
   margin: auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
 }
 
-.footer-section h3,
+/* Sections */
+.footer-section h3 {
+  font-size: 24px;
+  color: #f97316;
+  margin-bottom: 14px;
+}
+
 .footer-section h4 {
-  color: #ff9900;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #ffffff;
 }
 
 .footer-section p {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #cbd5f5;
 }
 
+/* Links */
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
@@ -34,41 +46,49 @@
 }
 
 .footer-section ul li a {
-  color: #ddd;
-  text-decoration: none;
+  color: #cbd5f5;
   font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 .footer-section ul li a:hover {
-  color: #ff9900;
+  color: #f97316;
+}
+
+/* Social */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .social-icons a {
-  display: inline-block;
-  margin-right: 15px;
-  color: #ddd;
-  text-decoration: none;
+  color: #cbd5f5;
   font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 .social-icons a:hover {
-  color: #ff9900;
+  color: #f97316;
 }
 
-/* ===== FOOTER BOTTOM ===== */
+/* Bottom Bar */
 .footer-bottom {
   text-align: center;
-  padding: 15px;
-  background: #0f1111;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #aaa;
+  padding: 16px;
+  background: #020617;
+  font-size: 13px;
+  color: #9ca3af;
+  border-top: 1px solid #1e293b;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive */
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 
@@ -78,7 +98,7 @@
     text-align: center;
   }
 
-  .social-icons a {
-    margin: 0 10px;
+  .social-icons {
+    align-items: center;
   }
 }

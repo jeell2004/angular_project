@@ -13,39 +13,44 @@
 
   <!-- Orders -->
   <div class="order-card" *ngFor="let order of orders">
+
+    <!-- Header -->
     <div class="order-header">
-      <div><button
-  class="cancel-btn"
-  (click)="cancelOrder(order.id)">
-  Cancel Order
-</button>
-</div>
-      <div>
+      <div class="order-meta">
         <p><strong>Order ID:</strong> #{{ order.id }}</p>
         <p><strong>Date:</strong> {{ order.date | date:'mediumDate' }}</p>
       </div>
-      <div class="order-total">
-        ₹{{ order.total }}
+
+      <div class="order-actions">
+        <div class="order-total">₹{{ order.total }}</div>
+        <button class="cancel-btn" (click)="cancelOrder(order.id)">
+          Cancel Order
+        </button>
       </div>
     </div>
 
+    <!-- Customer -->
     <div class="customer-info">
-      <p><strong>Name:</strong> {{ order.customer.name }}</p>
-      <p><strong>Payment:</strong> {{ order.customer.payment }}</p>
+      <span><strong>Name:</strong> {{ order.customer.name }}</span>
+      <span><strong>Payment:</strong> {{ order.customer.payment }}</span>
     </div>
 
+    <!-- Items -->
     <div class="order-items">
       <div class="item" *ngFor="let item of order.items">
         <img [src]="item.image">
+
         <div class="item-details">
           <h4>{{ item.name }}</h4>
           <p>Qty: {{ item.qty }}</p>
           <p>₹{{ item.price }}</p>
         </div>
+
         <div class="item-total">
           ₹{{ item.price * item.qty }}
         </div>
       </div>
     </div>
+
   </div>
 </div>

@@ -1,26 +1,134 @@
+/* PAGE WRAPPER */
 .product-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  font-family: "Segoe UI", sans-serif;
 }
 
-input, select, textarea {
-  padding: 10px;
+/* TITLE */
+.product-form h2 {
+  text-align: center;
+  margin-bottom: 26px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* INPUTS */
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form select,
+.product-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
   font-size: 14px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
+.product-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.product-form input::placeholder,
+.product-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* FOCUS */
+.product-form input:focus,
+.product-form select:focus,
+.product-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* CHECKBOX GROUP */
 .checkbox-group {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 14px;
+  margin: 12px 0 18px;
 }
 
-button {
-  padding: 12px;
-  background: black;
-  color: white;
-  border: none;
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
   cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.checkbox-group label:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+/* ACTIVE STATUS */
+.product-form label:last-of-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* BUTTON */
+.product-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  color: #ffffff;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.product-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(22,163,74,0.4);
+}
+
+.product-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* MESSAGE */
+.product-form + p,
+p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #16a34a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .product-form {
+    margin: 20px;
+    padding: 24px;
+  }
+
+  .product-form h2 {
+    font-size: 24px;
+  }
 }

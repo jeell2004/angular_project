@@ -1,13 +1,16 @@
-/* CAROUSEL */
+/* ===== HERO CAROUSEL ===== */
 .hero-carousel {
-  margin-top: 0;
+  margin-top: 0; /* navbar spacing already handled */
 }
 
-/* HERO SECTION */
+/* ===== HERO SECTION ===== */
 .hero-section {
   position: relative;
-  height: 80vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 420px;
+  background: linear-gradient(120deg, #020617, #0f172a);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -15,7 +18,11 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: radial-gradient(
+    circle at right,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.7)
+  );
   z-index: 1;
 }
 
@@ -23,99 +30,148 @@
 .hero-split {
   position: relative;
   z-index: 2;
-  height: 100%;
-  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
   align-items: center;
-  padding: 0 6%;
 }
 
-/* LEFT TEXT */
+/* ===== TEXT ===== */
 .hero-text {
-  width: 45%;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.badge {
+  width: fit-content;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #f97316;
+  color: #020617;
 }
 
 .hero-text h1 {
-  font-size: 3.2rem;
+  font-size: 42px;
   font-weight: 700;
-  margin: 16px 0;
+  line-height: 1.2;
 }
 
 .subtitle {
-  opacity: 0.85;
-  margin-bottom: 20px;
+  font-size: 15px;
+  color: #cbd5f5;
 }
 
+/* PRICE */
 .price {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
 }
 
 .discount {
-  margin-left: 12px;
-  color: #ffb703;
-  font-weight: 600;
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 4px 8px;
+  background: #16a34a;
+  border-radius: 6px;
 }
 
-/* BADGE */
-.badge {
-  display: inline-block;
-  background: #ff7a00;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-
-/* BUTTON */
+/* CTA */
 .shop-btn {
-  background: #ff7a00;
-  color: #fff;
+  margin-top: 18px;
+  width: fit-content;
+  padding: 14px 26px;
+  border-radius: 999px;
   border: none;
-  padding: 14px 36px;
-  font-size: 1rem;
-  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  color: #020617;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .shop-btn:hover {
-  background: #ff9800;
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249,115,22,0.4);
 }
 
-/* RIGHT IMAGE */
+/* ===== IMAGE ===== */
 .hero-image-box {
-  width: 55%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .hero-image {
-  max-width: 90%;
-  max-height: 80%;
+  max-width: 420px;
+  width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.6));
+  animation: float 6s ease-in-out infinite;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* FLOAT ANIMATION */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ===== CAROUSEL CONTROLS ===== */
+.ngb-carousel .carousel-control-prev,
+.ngb-carousel .carousel-control-next {
+  filter: invert(1);
+}
+
+.ngb-carousel .carousel-indicators [data-bs-target] {
+  background-color: #f97316;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .hero-image {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
   .hero-split {
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-text,
-  .hero-image-box {
-    width: 100%;
+  .hero-text {
+    align-items: center;
+  }
+
+  .shop-btn {
+    align-self: center;
+  }
+
+  .hero-image {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 360px;
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 28px;
   }
 
-  .hero-section {
-    height: auto;
-    padding: 60px 0;
+  .price {
+    font-size: 22px;
   }
-} 
+}
