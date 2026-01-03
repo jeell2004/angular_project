@@ -1,89 +1,12 @@
 {
   "seller": [
     {
-      "id": "b61b",
-      "name": "ABC Traders",
-      "email": "seller@abctraders.com",
-      "phone": "9876543210",
-      "businessType": "Proprietorship",
-      "gst": "24ABCDE1234F1Z5",
-      "password": "Seller@123",
-      "confirmPassword": "Seller@123",
-      "terms": true
-    },
-    {
-      "id": "fa4b",
+      "id": "de55",
       "name": "jeel limbani",
-      "email": "jeellimbani2004@gmail.com",
-      "phone": "9099157483",
-      "businessType": "Proprietorship",
-      "gst": "12345678909",
-      "password": "12345678",
-      "confirmPassword": "12345678",
-      "terms": true
-    },
-    {
-      "id": "5819",
-      "name": "jeel ak",
-      "email": "jeel81132@gmail.com",
-      "phone": "07896548885",
-      "businessType": "Proprietorship",
-      "gst": "12345678909",
-      "password": "12121212",
-      "confirmPassword": "12121212",
-      "terms": true
-    },
-    {
-      "id": "da8e",
-      "name": "test",
-      "email": "test@gmail.com",
-      "phone": "1234567889",
+      "email": "jeellimbani@gmail.com",
+      "phone": "9099157484",
       "businessType": "Individual",
-      "gst": "124578963",
-      "password": "123456789",
-      "confirmPassword": "123456789",
-      "terms": true
-    },
-    {
-      "id": "174e",
-      "name": "test",
-      "email": "test@gmail.com",
-      "phone": "1234567889",
-      "businessType": "Proprietorship",
-      "gst": "12345678909",
-      "password": "123456789",
-      "confirmPassword": "123456789",
-      "terms": true
-    },
-    {
-      "id": "7add",
-      "name": "test",
-      "email": "test@gmail.com",
-      "phone": "1234567889",
-      "businessType": "Private Limited",
-      "gst": "12345678909",
-      "password": "123123123",
-      "confirmPassword": "123123123",
-      "terms": true
-    },
-    {
-      "id": "1dd2",
-      "name": "test",
-      "email": "test@gmail.com",
-      "phone": "1234567889",
-      "businessType": "Private Limited",
-      "gst": "12345678909",
-      "password": "123",
-      "confirmPassword": "123",
-      "terms": true
-    },
-    {
-      "id": "fa94",
-      "name": "jeel limbani",
-      "email": "jeellimbani2004@gmail.com",
-      "phone": "9099157483",
-      "businessType": "Individual",
-      "gst": "",
+      "gst": "123456789",
       "password": "12345678",
       "confirmPassword": "12345678",
       "terms": true
@@ -91,312 +14,225 @@
   ],
   "Products": [
     {
-      "id": "79c0",
-      "name": "nike",
+      "id": "c824",
+      "name": "TEXTURED SLIP-ON MOCCASIN WAVE PRO - BLACK",
       "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
+      "subCategory": "Lofer",
+      "price": 4000,
       "discount": 10,
       "quantity": 10,
-      "brand": "Nike",
+      "brand": "Rare Rabbit",
       "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
+        "XL"
       ],
       "color": [
-        "Red",
+        "Black"
+      ],
+      "description": "Rare Rabbit",
+      "image": "https://thehouseofrare.com/cdn/shop/files/NewGuidelines_0002_Group3.jpg?v=1761220001",
+      "status": true
+    },
+    {
+      "id": "b140",
+      "name": "X Lows MADAGASCAR",
+      "category": "Shoes",
+      "subCategory": "Sport",
+      "price": 4000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Comet",
+      "size": [
+        "XL"
+      ],
+      "color": [
         "Black",
         "White"
       ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "description": "Comet",
+      "image": "https://www.wearcomet.com/cdn/shop/t/116/assets/lows-blue-grey_280x.png?v=131878003422231053501751361391",
       "status": true
     },
     {
-      "id": "773d",
-      "name": "Sony BRAVIA 2 4K Ultra HD Smart Google LED TV",
-      "category": "Electronics",
-      "subCategory": "tv",
-      "price": 42000,
+      "id": "2dae",
+      "name": "Boldfit Men's Slip-On Walking Shoes",
+      "category": "Shoes",
+      "subCategory": "Sport",
+      "price": 1000,
       "discount": 10,
-      "quantity": 5,
-      "brand": "Sony",
+      "quantity": 15,
+      "brand": "Boldfit Men's Slip-On Walking Shoes",
       "size": [],
       "color": [],
-      "description": "Resolution: 4K Ultra HD (3840 x 2160) | Refresh Rate: 60 Hertz\nConnectivity: 4 HDMI ports to connect set top box, Blu Ray players, gaming console | 2 USB ports to connect hard drives and other USB devices\nSound : 20 Watts Output | 2ch | Open Baffle Speaker| DTS Digital Surround | DTS:X | Dolby Atmos, Dolby Audio\nSmart TV Features: Google TV | Watchlist | Google Assistant |Google Cast | Game Menu | ALLM/eARC (HDMI 2.1 Compatible) | Additional Features: Apple Airplay 2 | Apple Homekit | Alexa | Energy Rating: 2 Star | Annual Energy Consumption: 134.38 kWh\nDisplay : 4K LED | 4K Processor X1 | Live Color | 4K X-Reality PRO | MotionFlow XR 200 | HDR10/HLG\nWarranty Information: 1 Year comprehensive warranty on product provided by the brand from the date of purchase including remote for technical issue\nAdditional Information : Brand Warranty can be availed using invoice. User manual can be accessed from brand website under About this item/ Product details section.",
-      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSRjse2asgTnZR5sK2nLMxBZv9guk1oQ4ceOfXcnDZeX22rUg9vK9KC4I2X5y0qRzzw4X_D8JdwADnaSE1r4Po7Gx_2HtZHVLh5CBCnkHhqsOnrHGEQ1HvoRw",
+      "description": "Boldfit Men's Slip-On Walking Shoes",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRU_1-BXYrPbiFAFA4vNiX8Gv4ZY05rpXIzePQl58VtFRIoszdodn-v7bwPSkdYB8YpF5yfkgTBTsTiG63GbsPqOOOgM9_EEOC_XX3eJBadGuCOGhI-DWr3yKY",
       "status": true
     },
     {
-      "id": "892a",
-      "name": "H&M Men's Regular Fit T-shirt",
-      "category": "Clothes",
-      "subCategory": "T-shirt",
-      "price": 400,
+      "id": "3401",
+      "name": "Nike Uplift SC Men's Shoes Size 8.5 (White)",
+      "category": "Shoes",
+      "subCategory": "Sport",
+      "price": 4500,
       "discount": 10,
       "quantity": 10,
-      "brand": "H&M",
-      "size": [
-        "XXL",
-        "XL",
-        "L",
-        "M"
-      ],
-      "color": [
-        "Blue",
-        "Black",
-        "White",
-        "Green",
-        "Red"
-      ],
-      "description": "H&M Men's Regular Fit T-shirt",
-      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-Clw15A8w7zbkqj3IgmamkXKAp-mqk5eE2GhT_noTFlwxFnLj20PNRqv1odNMaDTueO-lIETogDzR_n0Gn2jLQKa3Kisndfxp_Lpa1QTZoFKF7sv7W2nCfg",
+      "brand": "Nike ",
+      "size": [],
+      "color": [],
+      "description": "Nike Uplift SC Men's Shoes Size 8.5 (White)",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQmPuuaspBNzFX-Kle2OYPFaQ_vFpFcDvNzNPfPq0M81Zh1V7FKBatU-Ezn_zIzp6l0eX0JlItJyO1Bdz3Izl1cVwPB10qD2RhC1jIOi3R1ZmTnzRrq6FJJfHw",
       "status": true
     },
     {
-      "id": "90ba",
+      "id": "bca6",
+      "name": "Samsung 138 cm (55 inches) Vision AI 4K Ultra HD Smart QLED TV QA55QEF1AULXL",
+      "category": "Electronics",
+      "subCategory": "TV",
+      "price": 45000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Samsung",
+      "size": [
+        "XL"
+      ],
+      "color": [
+        "Black",
+        "White"
+      ],
+      "description": "Resolution: QLED 4K Ultra HD (3840 x 2160) | Refresh Rate: 50 Hertz\nConnectivity: Enjoy seamless integration with 3 HDMI Ports for connecting your Set-Top Box/DTH, Soundbar, Home Theater, Gaming Console, and more. Plus, stay flexible with 1 USB-A Port for easy access to Hard Drives and other USB-A compatible devices. Stay connected with Wi-Fi 5, Bluetooth 5.3, and HDMI eARC, along with an Ethernet LAN Port for stable wired internet. Additional features include Anynet+ (HDMI-CEC) for unified control and RF In for Terrestrial/Cable input.",
+      "image": "https://m.media-amazon.com/images/I/816jSKbarJL._SX355_.jpg",
+      "status": true
+    },
+    {
+      "id": "a3d1",
+      "name": "Samsung Vision AI Smart TV 1.38 m (55) QLED QEF1 4K",
+      "category": "Electronics",
+      "subCategory": "TV",
+      "price": 45000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Samsung",
+      "size": [],
+      "color": [],
+      "description": "1.38 m (55) QLED QEF1 4K Samsung Vision AI Smart TV",
+      "image": "https://images.samsung.com/is/image/samsung/p6pim/in/qa55qef1aulxl/energylabel/in-energylabel-product-qa55qef1aulxl-550348564?$684_547_PNG$",
+      "status": true
+    },
+    {
+      "id": "219a",
+      "name": "Dell 16 Plus Laptop",
+      "category": "Electronics",
+      "subCategory": "Laptop",
+      "price": 70000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Dell",
+      "size": [],
+      "color": [],
+      "description": "Dell 16 Plus Laptop",
+      "image": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-plus/db16250/notebook-db16250nt-copilot-pc-mg.png?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=589&qlt=100,1&resMode=sharp2&size=589,402&chrss=full",
+      "status": true
+    },
+    {
+      "id": "8276",
+      "name": "Samsung Galaxy Book4 (Gray, 16GB RAM, 512GB SSD)",
+      "category": "Electronics",
+      "subCategory": "laptop",
+      "price": 50000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Samsung ",
+      "size": [],
+      "color": [],
+      "description": "Samsung Galaxy Book4 (Gray, 16GB RAM, 512GB SSD) | 15.6\" Full HD Screen | Intel Core i5 1335U Processor | Windows 11 Home | MS Office 2021 | Fingerprint Reader | Intel Iris XE Graphics | RJ45 LAN Port",
+      "image": "https://m.media-amazon.com/images/I/41Q5HSfge9L._SY300_SX300_QL70_FMwebp_.jpg",
+      "status": true
+    },
+    {
+      "id": "372b",
+      "name": "VIVO V60 8GB+256GB Moonlit Blue",
+      "category": "Electronics",
+      "subCategory": "Phone",
+      "price": 50000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Vivo",
+      "size": [],
+      "color": [],
+      "description": "V60 8GB+256GB Moonlit Blue",
+      "image": "https://exstatic-in.vivo.com/Oz84QB3Wo0uns8j1/in/1754899251641/2b05c8758c7142cbb04cf145a40c573f.png.webp",
+      "status": true
+    },
+    {
+      "id": "2647",
+      "name": "Puma Cotton Men Ess Big Logo Hooded Neck Hoodie Fl (S) Mineral",
+      "category": "Clothes",
+      "subCategory": "Hoodie",
+      "price": 5000,
+      "discount": 10,
+      "quantity": 10,
+      "brand": "Puma",
+      "size": [
+        "L",
+        "XL",
+        "XXL",
+        "M",
+        "S"
+      ],
+      "color": [
+        "White",
+        "Black"
+      ],
+      "description": "Puma Cotton Men Ess Big Logo Hooded Neck Hoodie Fl (S) Mineral",
+      "image": "https://m.media-amazon.com/images/I/51Bj9syNw2L._SX679_.jpg",
+      "status": true
+    },
+    {
+      "id": "6cd7",
       "name": "Lymio Men Polyester Casual Regular Fit Shirt",
       "category": "Clothes",
       "subCategory": "Shirt",
-      "price": 500,
+      "price": 1200,
       "discount": 10,
       "quantity": 10,
-      "brand": "Lymio",
+      "brand": "Lymio ",
       "size": [],
       "color": [],
       "description": "Lymio Men Polyester Casual Regular Fit Shirt",
-      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRebTChZyMfmjyP9imbxFQqINLYzSWG4xMNhes2KBGYiyDmWvAfGWZQIDqFQ3tQaagkVdPqLZFThL8U6_GG7U8cGBFamN3rD4e4d0dzTg7FeTivLZ7laBFy",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRDn3F27jmXAsgZj6exb_Ol-DPTz431kzEx8ocx5HF1QQc8-aEuYArP2I63BMOUIRyQSxBsVYHdVMETQj4KKFw-Zic82TRYJRl91jp52z2yqaoYdmfUekvt",
       "status": true
     },
     {
-      "id": "79c1",
-      "name": "nike",
-      "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
+      "id": "80f3",
+      "name": "Lymio Jackets || Jacket for men || Lightweight Outwear Jacket (J-10-11)",
+      "category": "Clothes",
+      "subCategory": "Jacket ",
+      "price": 1500,
       "discount": 10,
       "quantity": 10,
-      "brand": "Nike",
-      "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "brand": "Lymio ",
+      "size": [],
+      "color": [],
+      "description": "Lymio Jackets || Jacket for men || Lightweight Outwear Jacket (J-10-11)",
+      "image": "https://m.media-amazon.com/images/I/71sB8bOhSmL._SY879_.jpg",
       "status": true
     },
     {
-      "id": "79c2",
-      "name": "nike",
-      "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
+      "id": "19a8",
+      "name": "Shrey Bomber Shirt S/S",
+      "category": "Clothes",
+      "subCategory": "Shirt ",
+      "price": 1500,
       "discount": 10,
       "quantity": 10,
-      "brand": "Nike",
-      "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
-      "status": true
-    },
-    {
-      "id": "79c3",
-      "name": "nike",
-      "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
-      "discount": 10,
-      "quantity": 10,
-      "brand": "Nike",
-      "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
-      "status": true
-    },
-    {
-      "id": "79c4",
-      "name": "nike",
-      "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
-      "discount": 10,
-      "quantity": 10,
-      "brand": "Nike",
-      "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
-      "status": true
-    },
-    {
-      "id": "79c5",
-      "name": "nike",
-      "category": "Shoes",
-      "subCategory": "nike-air",
-      "price": 10000,
-      "discount": 10,
-      "quantity": 10,
-      "brand": "Nike",
-      "size": [
-        "S",
-        "L",
-        "M",
-        "XL",
-        "XXL"
-      ],
-      "color": [
-        "Red",
-        "Black",
-        "White"
-      ],
-      "description": "Ahead of its time in '99, the Air Max SNDR returns—and it still ticks all the boxes. From the synthetic leather upper to the zip closure, this innovative sneaker continues to break the mould. Unzip the shroud to reveal \"6453\", a nod to the last 4 numbers of Nike's office numbers around the world, which spell out N-I-K-E on the keypad.\n\n",
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "brand": "Shrey Bomber",
+      "size": [],
+      "color": [],
+      "description": "Shrey Bomber Shirt S/S",
+      "image": "https://ik.imagekit.io/vyka3olhl/uk/8814c81b-dcc4-48e9-b2df-453de2a79be8/olive/SHREY_BOMBER_SHIRT_SS_2104_OLIVE_1_HD_QP4I1mVUBr.webp?tr=w-700,h-933?tr=w-700,h-933",
       "status": true
     }
   ],
-  "users": [
-    {
-      "id": "1",
-      "name": "John Doe",
-      "email": "YKx9O@example.com",
-      "password": "12345678"
-    },
-    {
-      "id": "5ce0",
-      "name": "jeel ak",
-      "email": "jeel81132@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "6065",
-      "name": "jeel ak",
-      "email": "jeel81132@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "5b5d",
-      "name": "jeel",
-      "email": "jeellimbani1811@gmail.com",
-      "password": "123123123"
-    },
-    {
-      "id": "5784",
-      "name": "jeel limbani",
-      "email": "jeellimbani2004@gmail.com",
-      "password": "12345678"
-    }
-  ],
-  "cart": [
-    {
-      "id": "be3f",
-      "userId": "5ce0",
-      "productId": "79c0",
-      "name": "nike",
-      "price": 10000,
-      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
-      "qty": 1
-    }
-  ],
-  "orders": [
-    {
-      "id": "dee1",
-      "customer": {
-        "name": "jeel limbani",
-        "email": "jeellimbani2004@gmail.com",
-        "address": "white palace, mota varachha",
-        "city": "surat",
-        "state": "Gujarat",
-        "zip": "394101",
-        "payment": "cod"
-      },
-      "items": [
-        {
-          "id": "90ba",
-          "name": "Lymio Men Polyester Casual Regular Fit Shirt",
-          "category": "Clothes",
-          "subCategory": "Shirt",
-          "price": 500,
-          "discount": 10,
-          "quantity": 10,
-          "brand": "Lymio",
-          "size": [],
-          "color": [],
-          "description": "Lymio Men Polyester Casual Regular Fit Shirt",
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRebTChZyMfmjyP9imbxFQqINLYzSWG4xMNhes2KBGYiyDmWvAfGWZQIDqFQ3tQaagkVdPqLZFThL8U6_GG7U8cGBFamN3rD4e4d0dzTg7FeTivLZ7laBFy",
-          "status": true,
-          "qty": 1
-        }
-      ],
-      "total": 500,
-      "date": "2026-01-03T06:28:16.760Z"
-    },
-    {
-      "id": "b785",
-      "customer": {
-        "name": "jeel limbani",
-        "email": "jeellimbani2004@gmail.com",
-        "address": "white palace, mota varachha",
-        "city": "surat",
-        "state": "Gujarat",
-        "zip": "394101",
-        "payment": "upi"
-      },
-      "items": [
-        {
-          "id": "c45b",
-          "productId": "79c3",
-          "name": "nike",
-          "price": 10000,
-          "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
-          "qty": 1
-        }
-      ],
-      "total": 10000,
-      "date": "2026-01-03T10:06:29.219Z",
-      "status": "placed"
-    }
-  ]
+  "users": [],
+  "cart": [],
+  "orders": []
 }

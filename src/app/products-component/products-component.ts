@@ -1,32 +1,59 @@
 import { Component } from '@angular/core';
 
 import { Product } from '../interface/productdata';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Productdata } from '../service/productdata';
 import { NgFor, NgIf } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-products-component',
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor,RouterLink],
   templateUrl: './products-component.html',
   styleUrl: './products-component.css',
 })
 export class ProductsComponent {
-product?: Product;
+products: Product[] = [];
+  groupedProducts: { [category: string]: Product[] } = {};
   isLoading = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private productService: Productdata
-  ) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    if (id) {
-      this.productService.selectedProduct(id).subscribe((res) => {
-        this.product = res;
-        this.isLoading = false;
-      });
-    }
+    this.fetchProducts();
   }
+
+  fetchProducts() {
+  this.isLoading = true;
+
+  this.http.get<any[]>('http://localhost:3000/Products')
+    .subscribe({
+      next: (res) => {
+        console.log('Products API Response:', res); // 🔥 DEBUG
+
+        this.products = res || [];
+        this.groupProductsByCategory();
+
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('API ERROR:', err);
+        this.isLoading = false; // 🔥 VERY IMPORTANT
+      }
+    });
+}
+
+
+
+  groupProductsByCategory() {
+    this.groupedProducts = this.products.reduce((acc: any, product) => {
+      acc[product.category] = acc[product.category] || [];
+      acc[product.category].push(product);
+      return acc;
+    }, {});
+  }
+
+  get categories() {
+    return Object.keys(this.groupedProducts);
+  }
+
 }

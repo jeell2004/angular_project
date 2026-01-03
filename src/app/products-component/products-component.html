@@ -1,54 +1,47 @@
-<div class="product-detail-container" *ngIf="!isLoading && product">
+<div class="products-page">
 
-  <!-- IMAGE SECTION -->
-  <div class="image-section">
-    <img [src]="product!.image" alt="{{ product!.name }}" />
+  <h2 class="page-title">Products</h2>
+
+  <!-- Loading -->
+  <div class="loading" *ngIf="isLoading">
+    Loading products...
   </div>
 
-  <!-- INFO SECTION -->
-  <div class="info-section">
+  <!-- CATEGORY SECTIONS -->
+  <div *ngFor="let category of categories" class="category-section">
 
-    <h1 class="name">{{ product!.name }}</h1>
+    <h3 class="category-title">{{ category }}</h3>
 
-    <p class="category">
-      {{ product!.category }} • {{ product!.subCategory }}
-    </p>
+    <div class="product-grid">
 
-    <div class="price-box">
-      <span class="price">₹{{ product!.price }}</span>
-      <span class="discount" *ngIf="product.discount">
-        {{ product!.discount }}% OFF
-      </span>
+      <div class="product-card" *ngFor="let product of groupedProducts[category]">
+
+        <a [routerLink]="['/product', product.id]" class="image-box">
+          <img [src]="product.image" alt="{{ product.name }}">
+        </a>
+
+        <div class="product-details">
+          <h4>{{ product.name }}</h4>
+
+          <p class="sub">{{ product.subCategory }}</p>
+
+          <p class="brand">{{ product.brand }}</p>
+
+          <div class="price-box">
+            <span class="price">₹{{ product.price }}</span>
+            <span class="discount" *ngIf="product.discount">
+              {{ product.discount }}% OFF
+            </span>
+          </div>
+
+          <button class="add-cart">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+
     </div>
-
-    <p class="brand"><strong>Brand:</strong> {{ product!.brand }}</p>
-
-    <p class="stock" [class.out]="product!.quantity === 0">
-      {{ product!.quantity > 0 ? 'In Stock' : 'Out of Stock' }}
-    </p>
-
-    <!-- SIZE -->
-    <div class="options" *ngIf="product.size?.length">
-      <h4>Available Sizes</h4>
-      <span class="option" *ngFor="let s of product.size">{{ s }}</span>
-    </div>
-
-    <!-- COLOR -->
-    <div class="options" *ngIf="product.color?.length">
-      <h4>Available Colors</h4>
-      <span class="option" *ngFor="let c of product.color">{{ c }}</span>
-    </div>
-
-    <!-- ACTION BUTTONS -->
-    <div class="actions">
-      <button class="add-cart">Add to Cart</button>
-      <button class="wishlist">♡ Wishlist</button>
-    </div>
-
   </div>
-</div>
 
-<!-- LOADING -->
-<div class="loading" *ngIf="isLoading">
-  Loading product...
 </div>
