@@ -1,11 +1,10 @@
 <nav class="navbar">
-
   <!-- LOGO -->
   <div class="logo">
     <a routerLink="/">MyShop</a>
   </div>
 
-  <!-- SEARCH (ONLY USER & GUEST) -->
+  <!-- SEARCH (DESKTOP ONLY) -->
   <div class="search-box" *ngIf="!isSellerLoggedIn">
     <input
       type="text"
@@ -19,7 +18,7 @@
       <li
         *ngFor="let product of filteredProducts"
         [routerLink]="['/product', product.id]"
-        (click)="onSearchEnter()"
+        (click)="onSearchEnter(); closeMenu()"
       >
         <img [src]="product.image" />
         <div>
@@ -31,7 +30,9 @@
   </div>
 
   <!-- HAMBURGER -->
-  <div class="hamburger" (click)="toggleMenu()">☰</div>
+  <div class="hamburger" (click)="toggleMenu()">
+    {{ menuOpen ? '✕' : '☰' }}
+  </div>
 
   <!-- MENU -->
   <ul class="menu" [class.show]="menuOpen">
@@ -45,21 +46,21 @@
       <li><a routerLink="/seller" (click)="closeMenu()">Seller</a></li>
     </ng-container>
 
-    <!-- 👤 USER LOGGED IN -->
+    <!-- 👤 USER -->
     <ng-container *ngIf="isUserLoggedIn && !isSellerLoggedIn">
       <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
       <li><a routerLink="/products" (click)="closeMenu()">Products</a></li>
       <li><a routerLink="/cart" (click)="closeMenu()">Cart 🛒</a></li>
       <li><a routerLink="/myorders" (click)="closeMenu()">My Orders</a></li>
-      <li><a (click)="logout()">🚪 Logout</a></li>
+      <li><a (click)="logout(); closeMenu()">🚪 Logout</a></li>
     </ng-container>
 
-    <!-- 🧑‍💼 SELLER LOGGED IN -->
+    <!-- 🧑‍💼 SELLER -->
     <ng-container *ngIf="isSellerLoggedIn">
       <li class="seller-name">👤 {{ sellerName }}</li>
       <li><a routerLink="/seller/seller-add-product" (click)="closeMenu()">➕ Add Product</a></li>
       <li><a routerLink="/sellerhome" (click)="closeMenu()">📦 Product List</a></li>
-      <li><a (click)="logout()">🚪 Logout</a></li>
+      <li><a (click)="logout(); closeMenu()">🚪 Logout</a></li>
     </ng-container>
 
   </ul>

@@ -29,44 +29,10 @@ userName: string = '';
   constructor(private router: Router, private seller: Seller, private product: Productdata) {}
 
   ngOnInit(): void {
-    //  this.product.productlist().subscribe(data => {
-    //   this.allProducts = data;
-    // });
-    // this.router.events.subscribe((event) => {
-    //   if (event instanceof NavigationEnd) {
-    //     // 🔐 Check seller login from localStorage
-    //     const sellerData = localStorage.getItem('seller');
-    //     this.isSellerLoggedIn = !!sellerData;
-
-    //     // 👤 Get seller name safely
-    //     if (sellerData) {
-    //       try {
-    //         const sellerObj = JSON.parse(sellerData);
-    //         this.sellerName = sellerObj?.name || '';
-    //       } catch {
-    //         console.error('Invalid seller data in localStorage');
-    //         this.sellerName = '';
-    //       }
-    //     } else {
-    //       this.sellerName = '';
-    //     }
-
-    //     // 🎨 Navbar style
-    //     if (this.isSellerLoggedIn && event.url.includes('seller')) {
-    //       this.menustyle = 'seller';
-    //     } else {
-    //       this.menustyle = 'default';
-    //     }
-
-    //     console.log('URL:', event.url);
-    //     console.log('Seller Logged In:', this.isSellerLoggedIn);
-    //     console.log('Seller Name:', this.sellerName);
-    //   }
-    // });
+    
     this.router.events.subscribe((event) => {
   if (event instanceof NavigationEnd) {
 
-    /* ---------- SELLER AUTH ---------- */
     const sellerData = localStorage.getItem('seller');
     this.isSellerLoggedIn = !!sellerData;
 
@@ -81,7 +47,6 @@ userName: string = '';
       this.sellerName = '';
     }
 
-    /* ---------- USER AUTH ---------- */
     const userData = localStorage.getItem('user');
     this.isUserLoggedIn = !!userData;
 
@@ -96,7 +61,6 @@ userName: string = '';
       this.userName = '';
     }
 
-    /* ---------- MENU STYLE ---------- */
     if (this.isSellerLoggedIn && event.url.includes('seller')) {
       this.menustyle = 'seller';
     } else {
@@ -107,13 +71,16 @@ userName: string = '';
 
   }
 
-  toggleMenu(): void {
-    this.menuOpen = !this.menuOpen;
-  }
 
-  closeMenu(): void {
-    this.menuOpen = false;
-  }
+toggleMenu() {
+  this.menuOpen = !this.menuOpen;
+  document.body.style.overflow = this.menuOpen ? 'hidden' : 'auto';
+}
+
+closeMenu() {
+  this.menuOpen = false;
+  document.body.style.overflow = 'auto';
+}
 logout(): void {
   localStorage.removeItem('seller');
   localStorage.removeItem('user');
@@ -127,13 +94,6 @@ logout(): void {
   this.menuOpen = false;
   this.router.navigate(['/']);
 }
-  // logout(): void {
-  //   localStorage.removeItem('seller');
-  //   this.seller.issellerloggedin.next(false);
-  //   this.isSellerLoggedIn = false;
-  //   this.sellerName = '';
-  //   this.router.navigate(['/']);
-  // }
   onSearchChange() {
   const term = this.searchTerm.trim().toLowerCase();
 
