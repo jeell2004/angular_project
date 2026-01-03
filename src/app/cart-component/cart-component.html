@@ -1,1 +1,33 @@
-<p>cart-component works!</p>
+<div class="cart-container">
+
+  <h2>Your Cart</h2>
+
+  <div *ngIf="cartItems.length === 0">
+    🛒 Your cart is empty
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+
+    <div *ngFor="let item of cartItems">
+
+      <img [src]="item.image" width="80">
+
+      <h4>{{ item.name }}</h4>
+      <p>₹{{ item.price }}</p>
+
+      <button (click)="decreaseQty(item)">−</button>
+      <span>{{ item.qty }}</span>
+      <button (click)="increaseQty(item)">+</button>
+
+      <p>₹{{ item.price * item.qty }}</p>
+
+      <button (click)="removeItem(item)">Remove</button>
+    </div>
+
+    <h3>Total: ₹{{ totalAmount }}</h3>
+
+  </div>
+  <div>
+    <button (click)="checkout()">Checkout</button>
+  </div>
+</div>

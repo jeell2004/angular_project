@@ -76,6 +76,17 @@
       "password": "123",
       "confirmPassword": "123",
       "terms": true
+    },
+    {
+      "id": "fa94",
+      "name": "jeel limbani",
+      "email": "jeellimbani2004@gmail.com",
+      "phone": "9099157483",
+      "businessType": "Individual",
+      "gst": "",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "terms": true
     }
   ],
   "Products": [
@@ -310,6 +321,51 @@
       "name": "jeel",
       "email": "jeellimbani1811@gmail.com",
       "password": "123123123"
+    }
+  ],
+  "cart": [
+    {
+      "id": "be3f",
+      "userId": "5ce0",
+      "productId": "79c0",
+      "name": "nike",
+      "price": 10000,
+      "image": "https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ca69368c-012d-4507-9ca8-be4b0ccb92e2/W+NIKE+AIR+MAX+SNDR.png",
+      "qty": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": "dee1",
+      "customer": {
+        "name": "jeel limbani",
+        "email": "jeellimbani2004@gmail.com",
+        "address": "white palace, mota varachha",
+        "city": "surat",
+        "state": "Gujarat",
+        "zip": "394101",
+        "payment": "cod"
+      },
+      "items": [
+        {
+          "id": "90ba",
+          "name": "Lymio Men Polyester Casual Regular Fit Shirt",
+          "category": "Clothes",
+          "subCategory": "Shirt",
+          "price": 500,
+          "discount": 10,
+          "quantity": 10,
+          "brand": "Lymio",
+          "size": [],
+          "color": [],
+          "description": "Lymio Men Polyester Casual Regular Fit Shirt",
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRebTChZyMfmjyP9imbxFQqINLYzSWG4xMNhes2KBGYiyDmWvAfGWZQIDqFQ3tQaagkVdPqLZFThL8U6_GG7U8cGBFamN3rD4e4d0dzTg7FeTivLZ7laBFy",
+          "status": true,
+          "qty": 1
+        }
+      ],
+      "total": 500,
+      "date": "2026-01-03T06:28:16.760Z"
     }
   ]
 }

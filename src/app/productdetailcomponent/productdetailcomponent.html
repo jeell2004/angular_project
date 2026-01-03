@@ -1,54 +1,30 @@
 <div class="product-detail-container" *ngIf="!isLoading && product">
 
-  <!-- IMAGE SECTION -->
   <div class="image-section">
-    <img [src]="product!.image" alt="{{ product!.name }}" />
+    <img [src]="product.image" alt="{{ product.name }}" />
   </div>
 
-  <!-- INFO SECTION -->
   <div class="info-section">
 
-    <h1 class="name">{{ product!.name }}</h1>
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.category }} • {{ product.subCategory }}</p>
 
-    <p class="category">
-      {{ product!.category }} • {{ product!.subCategory }}
+    <h2>₹{{ product.price }}</h2>
+
+    <p><strong>Brand:</strong> {{ product.brand }}</p>
+
+    <p [class.out]="product.quantity === 0">
+      {{ product.quantity > 0 ? 'In Stock' : 'Out of Stock' }}
     </p>
 
-    <div class="price-box">
-      <span class="price">₹{{ product!.price }}</span>
-      <span class="discount" *ngIf="product.discount">
-        {{ product!.discount }}% OFF
-      </span>
-    </div>
-
-    <p class="brand"><strong>Brand:</strong> {{ product!.brand }}</p>
-
-    <p class="stock" [class.out]="product!.quantity === 0">
-      {{ product!.quantity > 0 ? 'In Stock' : 'Out of Stock' }}
-    </p>
-
-    <!-- SIZE -->
-    <div class="options" *ngIf="product.size?.length">
-      <h4>Available Sizes</h4>
-      <span class="option" *ngFor="let s of product.size">{{ s }}</span>
-    </div>
-
-    <!-- COLOR -->
-    <div class="options" *ngIf="product.color?.length">
-      <h4>Available Colors</h4>
-      <span class="option" *ngFor="let c of product.color">{{ c }}</span>
-    </div>
-
-    <!-- ACTION BUTTONS -->
-    <div class="actions">
-      <button class="add-cart">Add to Cart</button>
-      <button class="wishlist">♡ Wishlist</button>
-    </div>
+    <button
+      class="add-cart"
+      [disabled]="product.quantity === 0"
+      (click)="addToCart(product)">
+      Add to Cart
+    </button>
 
   </div>
 </div>
 
-<!-- LOADING -->
-<div class="loading" *ngIf="isLoading">
-  Loading product...
-</div>
+<div *ngIf="isLoading">Loading...</div>
