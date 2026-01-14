@@ -1,33 +1,37 @@
 <form [formGroup]="userForm" (ngSubmit)="submit()">
   <input type="text" formControlName="name" placeholder="Name" />
   <input type="email" formControlName="email" placeholder="Email" />
+     <div formGroupName="address">
+    <input type="text" formControlName="state" placeholder="State">
+    <input type="text" formControlName="city" placeholder="City">
+    <input type="text" formControlName="pincode" placeholder="Pincode">
+  </div>
+
   <button type="submit">Save</button>
 </form>
 
 <hr />
-
-<table border="1" width="50%">
+<table >
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Action</th>
+    <th>State</th>
+    <th>City</th>
+    <th>Pincode</th>
+    <th>Update and Delete</th>
   </tr>
-@for (user of users; track user.id; let i = $index) {
-  <tr>
-    <td>{{ user.name }}</td>
-    <td>{{ user.email }}</td>
-    <td>
-      <button (click)="editUser(i)">Edit</button>
-      <button (click)="deleteUser(i)">Delete</button>
-    </td>
-  </tr>
-}
-  <!-- <tr *ngFor="let user of users; let i = index">
-    <td>{{ user.name }}</td>
-    <td>{{ user.email }}</td>
-    <td>
-      <button (click)="editUser(i)">Edit</button>
-      <button (click)="deleteUser(i)">Delete</button>
-    </td>
-  </tr> -->
+
+  @for (user of users; track $index; let i = $index) {
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address?.state }}</td>
+      <td>{{ user.address?.city }}</td>
+      <td>{{ user.address?.pincode }}</td>
+      <td>
+        <button (click)="editUser(i)">Edit</button>
+        <button (click)="deleteUser(i)">Delete</button>
+      </td>
+    </tr>
+  }
 </table>
