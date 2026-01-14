@@ -11,7 +11,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class Formcomponent {
 userForm!: FormGroup;
   users: any[] = [];
-  editIndex = -1;  
+  // -1 means no user exist 
+  // 0 means user exist
+  getdata = -1;  
 
   constructor(private fb: FormBuilder) {}
 
@@ -47,13 +49,11 @@ userForm!: FormGroup;
       email: this.userForm.value.email
     };
 
-    if (this.editIndex >= 0) {
-      // UPDATE
-      this.users[this.editIndex].name = userData.name;
-      this.users[this.editIndex].email = userData.email;
-      this.editIndex = -1;
+    if (this.getdata >= 0) {
+      this.users[this.getdata].name = userData.name;
+      this.users[this.getdata].email = userData.email;
+      this.getdata = -1;
     } else {
-      // ADD
       this.users.push(userData);
     }
 
@@ -62,7 +62,7 @@ userForm!: FormGroup;
   }
 
   editUser(index: number) {
-    this.editIndex = index;
+    this.getdata = index;
     this.userForm.setValue({
       name: this.users[index].name,
       email: this.users[index].email
