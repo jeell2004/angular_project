@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="submit()">
+  <input type="text" formControlName="name" placeholder="Name" />
+  <input type="email" formControlName="email" placeholder="Email" />
+  <button type="submit">Save</button>
+</form>
+
+<hr />
+
+<table border="1" width="50%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+@for (user of users; track user.id; let i = $index) {
+  <tr>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <button (click)="editUser(i)">Edit</button>
+      <button (click)="deleteUser(i)">Delete</button>
+    </td>
+  </tr>
+}
+  <!-- <tr *ngFor="let user of users; let i = index">
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <button (click)="editUser(i)">Edit</button>
+      <button (click)="deleteUser(i)">Delete</button>
+    </td>
+  </tr> -->
+</table>

@@ -232,7 +232,14 @@
       "status": true
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "f8b8",
+      "name": "jeel ak",
+      "email": "jeellimbani1811@gmail.com",
+      "password": "123123123"
+    }
+  ],
   "cart": [],
   "orders": []
 }
